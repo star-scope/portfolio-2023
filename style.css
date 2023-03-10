@@ -1,0 +1,258 @@
+* {
+    font-family: Satoshi Variable;
+}
+
+body {
+    background-color: #111111;
+    overflow: hidden;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-family: 'Satoshi Variable';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 0.2em;
+    color: #CCCCCC;
+    margin: 0;
+}
+
+.s1 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.35em;
+    color: #CCCCCC;
+    margin-top: 20px;
+}
+
+.bodyCopy {
+    font-family: 'Satoshi Variable';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    letter-spacing: 0.15em;
+    color: #CCCCCC;
+    margin: 0;
+}
+
+#headerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 75px;
+    display: flex;
+    height: 150px;
+    width: 1640px;
+}
+
+#profilePic {
+    max-width: 100px;
+    max-height: 100px;;
+    filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.35));
+    border-radius: 10px;
+    margin-right: 40px;
+    align-self: center;
+    transition: .1s;
+}
+
+#profilePic:hover {
+    margin-top: -5px;
+    transition: .1s;
+}
+
+#title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+#role {
+    color: #97d700;
+    text-decoration: none;
+    transition: .1s;
+}
+
+#role:hover {
+    font-weight: 600;
+    letter-spacing: .2em;
+    transition: .1s;
+    cursor: pointer;
+}
+
+#flagContainer {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-left: auto;
+}
+
+.flags {
+    height: 50px;
+    width: 75px;
+    filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.35));
+    transition: .1s;
+}
+
+.flags:hover {
+    margin-top: -5px;
+    transition: .1s;
+}
+
+#mainContainer {
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+}
+
+#cardContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    width: 1640px;
+    margin-top: 7%;
+}
+
+.mainCard {
+    background: linear-gradient(180deg, #222222 0%, #181818 100%);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.35);
+    border-radius: 15px;
+    width: 380px;
+    height: 380px;
+    transition: .1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainCard:hover {
+    margin-top: -10px;
+    box-sizing: border-box;
+    transition: .1s;
+    box-shadow: 0px 10px 50px #00a9fb50;
+    border: 1px solid #00a9fb75;
+}
+
+footer {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    width: 100%;
+}
+
+#line {
+    height: 2px;
+    width: 1640px;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, rgba(34, 34, 34, 0) 0%, #222222 50%, rgba(34, 34, 34, 0) 100%);
+}
+
+#gradient {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, #111111 0%, rgba(17, 17, 17, 0) 10%, rgba(17, 17, 17, 0) 90%, #111111 100%);
+    position: absolute;
+    z-index: 500;
+}
+
+.footerCopy {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 23px;
+    letter-spacing: 1em;
+    color: #555555;
+}
+
+.scroll {
+    display: flex;
+    margin-bottom: 10px;
+  }
+
+  .scrollContent {
+    width: 1750px;
+    animation: scroll 40s linear infinite;
+  }
+
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+/* Stack */
+
+#backContainer {
+    display: flex;
+    flex-direction: row;
+    transition: .1s;
+    text-decoration: none;
+}
+
+#backContainer:hover {
+    margin-left: -5px;
+    transition: .1s;
+}
+
+#back {
+    margin-right: 40px;
+    align-self: center;
+    transition: .1s;
+    width: 24px;
+    height: 24px;
+}
+
+#backText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: -4px;
+}
+
+.pageTitleContainer {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 148px;
+    display: flex;
+    width: 100%;
+}
+
+.pageTitle {
+    position: absolute;
+    margin-top: -4px;
+}
+
+.stackCard {
+    background: linear-gradient(180deg, #222222 0%, #181818 100%);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.35);
+    border-radius: 20px;
+    width: 380px;
+    height: 380px;
+    transition: .1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
