@@ -1,0 +1,75 @@
+#headerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 75px;
+    display: flex;
+    height: 150px;
+    width: 80%;
+  }
+  
+  #profilePic {
+    max-width: 100px;
+    max-height: 100px;;
+    filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.35));
+    border-radius: 10px;
+    margin-right: 40px;
+    align-self: center;
+    transition: .1s;
+  }
+  
+  #profilePic:hover {
+    margin-top: -5px;
+    transition: .1s;
+  }
+  
+  #title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  #role {
+    color: #00a9fb;
+    text-decoration: none;
+    transition: .1s;
+  }
+  
+  #role:hover {
+    font-weight: 600;
+    letter-spacing: .2em;
+    transition: .1s;
+    cursor: pointer;
+  }
+  
+  #flagContainer {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-left: auto;
+  }
+  
+  .flags {
+    height: 50px;
+    width: 75px;
+    filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.35));
+    transition: .1s;
+  }
+  
+  .flags:hover {
+    margin-top: -5px;
+    transition: .1s;
+  }
+
+  @media (max-width: 640px) {
+    #headerContainer {
+        display: none;
+    }
+  }
