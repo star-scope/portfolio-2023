@@ -50,56 +50,13 @@ h1 {
 }
 
 #cardContainer {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   justify-content: center;
   align-items: center;
-  gap: 40px;
+  grid-gap: 40px;
   width: 80%;
   margin-top: 7%;
-}
-
-#section1 {
-  opacity: 0;
-  animation: Section 1s forwards;
-}
-
-#section2 {
-  opacity: 0;
-  animation: Section 1s .1s forwards;
-}
-
-#section3 {
-  opacity: 0;
-  animation: Section 1s .2s forwards;
-}
-
-#section4 {
-  opacity: 0;
-  animation: Section 1s .3s forwards;
-}
-
-.mainCard {
-  background: linear-gradient(180deg, #222222 0%, #181818 100%);
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.35);
-  border-radius: 15px;
-  aspect-ratio: 1 / 1;
-  transition: .1s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.mainCard img {
-  margin-top: 10px;
-  width: 80%;
-}
-
-.mainCard:hover {
-  margin-top: -10px;
-  box-sizing: border-box;
-  transition: .1s;
-  box-shadow: 0px 10px 50px #00a9fb50;
-  border: 1px solid #00a9fb75;
 }
 
 /* Stack */
@@ -158,14 +115,9 @@ h1 {
   justify-content: center;
 }
 
-@keyframes Section {
-  0% {
-    opacity: 0;
-    transform: translateY(20px)
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0px)
+@media (max-width: 1000px) {
+  #cardContainer {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 

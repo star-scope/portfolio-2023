@@ -51,7 +51,7 @@ footer {
     }
   }
 
-@media (max-width: 640px) {
+@media (max-width: 820px) {
     footer {
       display: none;
     }

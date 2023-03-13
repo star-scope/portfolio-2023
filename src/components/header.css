@@ -68,6 +68,12 @@
     transition: .1s;
   }
 
+  @media (max-width: 820px) {
+    .bodyCopy {
+        max-width: 300px;
+    }
+  }
+
   @media (max-width: 640px) {
     #headerContainer {
         display: none;
