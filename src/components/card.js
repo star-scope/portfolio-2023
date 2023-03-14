@@ -4,7 +4,7 @@ import "./card.css"
 const HomeCard = props => (
     <section id={props.id}>
         <div className="Card">
-            <img src={props.image}></img>
+            <img src={props.image}/>
         </div>
         <p class="s1">{props.title}</p>
     </section>

@@ -1,0 +1,54 @@
+.body {
+    color: #CCCCCC;
+    max-width: 48%;
+    margin-left: 10%;
+    font-family: 'Satoshi Variable';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 30px;
+    letter-spacing: 0.11em;
+}
+
+.spacer {
+    height: 5px;
+}
+
+#spacerTop {
+    margin-top: 70px;
+}
+
+a {
+    text-decoration: none;
+    color: #00a9fb;
+}
+
+#linkGrid {
+    display: inline-grid;
+    grid-template-columns: repeat(5 , 24px);
+    align-items: center;
+    justify-items: center;
+    grid-gap: 40px;
+    margin-left: 10%;
+    margin-top: 50px;
+    transition: .1s;
+}
+
+#backButton {
+    transition: .1s;
+    position: relative;
+}
+
+#back:hover {
+    transform: translateX(-2px);
+    transition: .1s;
+}
+
+.link{
+    transition: .1s;
+}
+
+.link:hover {
+    transform: translateY(-3px);
+    transition: .1s;
+}
