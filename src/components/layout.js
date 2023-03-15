@@ -1,16 +1,21 @@
-import * as React from "react"
-import PropTypes from 'prop-types'
+import * as React from "react";
+import PropTypes from "prop-types";
 
-import "./layout.css"
-import Footer from "../components/footer"
+import "./layout.css";
+import Footer from "../components/footer";
 
-const Layout =({children}) =>{
-  return(
-      <>
-      <Footer/>
+const Layout = ({ children }) => {
+  return (
+    <div>
       <main>{children}</main>
-      </>
-  )
-}
+      <Footer />
+    </div>
+  );
+};
 
-export default Layout
+// Define the propTypes for the Layout component
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+export default Layout;
