@@ -14,14 +14,14 @@
     height: 2%;
   }
   
-  .spacer-top {
+  #spacer-top {
     margin-top: 70px;
   }
   
   a {
     text-decoration: none;
     color: #00a9fb;
-    transition: color 0.1s;
+    transition: color 0.3s;
   }
   
   a:hover {
