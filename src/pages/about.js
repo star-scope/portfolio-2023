@@ -1,14 +1,13 @@
 import "../components/about.css"
 import * as React from "react"
-import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import BackButtonHeader from '../components/backHeader'
+import BackButtonHeader from '../components/nav/backHeader'
 
 const About = () => (
   <Layout>
-    <BackButtonHeader title="PROFESSIONAL WORK"/>
+    <BackButtonHeader title="ABOUT"/>
     <div id="spacer-top">
       <p id="section1" className="body">Hi, I’m Caleb. I’m a Designer based in Atlanta, GA. I currently work as a Design Technologist for Tactacam. Tactacam makes POV cameras and trailcams for hunting, security cameras for home defense, and various other products. I work on our mobile and web apps that allow you to connect your devices to these cameras, along with our internal and user facing websites. Our main apps are called <a href="https://apps.apple.com/gr/app/tactacam-connect/id1589965130" target="_blank" rel="noopener noreferrer">Tactacam Connect</a>, <a href="https://www.revealcellcam.com/" target="_blank" rel="noopener noreferrer">Tactacam Reveal</a>, and Tactacam Security. I am also working on a partnership app for Cabella’s/Bass Pro Shops, and a variety of other personal projects.</p>
       <div className="spacer"></div>

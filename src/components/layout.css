@@ -9,8 +9,18 @@ body {
 }
 
 /* Target the divs down the hierarchy */
-#___gatsby > div > div > div {
+#___gatsby > div > div > div > div {
   height: 100vh;
+}
+
+/* Target the divs down the hierarchy */
+#___gatsby > div > div > div > div > div{
+  height: 100vh;
+}
+
+#logo {
+  max-width: 50px;
+  margin-bottom: 50px;
 }
 
 a {
@@ -37,6 +47,32 @@ h1 {
   margin-top: 20px;
 }
 
+.s2 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.35em;
+  margin-top: 0;
+  padding-top: 6%;
+  padding-left: 6%;
+  color: #cccccc;
+}
+
+.s3 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.2em;
+  margin-top: -10px;
+  padding-left: 6%;
+}
+
 .bodyCopy {
   font-style: normal;
   font-weight: 400;
@@ -58,6 +94,16 @@ h1 {
   align-items: center;
   grid-gap: 40px;
   width: 80%;
+  margin-top: 7%;
+}
+
+#workContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  grid-gap: 40px;
+  width: 40%;
   margin-top: 7%;
 }
 
@@ -117,6 +163,28 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+#notFoundContainer {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+  color: #cccccc;
+}
+
+#notFoundCopy {
+  margin-top: 50px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 30px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
 }
 
 /* Media Queries */

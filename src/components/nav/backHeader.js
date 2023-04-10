@@ -1,5 +1,5 @@
 import * as React from "react";
-import AniLink from "gatsby-plugin-transition-link/AniLink";
+import { Link } from "gatsby";
 
 import "./header.css";
 
@@ -7,9 +7,9 @@ const BackButtonHeader = props => {
   return (
     <div id="headerContainer">
       <header>
-        <AniLink id="backButton" fade to="/" duration={1}>
+        <Link id="backButton" to="/">
             <img src="/images/arrow-left.svg" alt="Back" />
-        </AniLink>
+        </Link>
         <div id="titleContainer">
           <h1>{props.title}</h1>
         </div>

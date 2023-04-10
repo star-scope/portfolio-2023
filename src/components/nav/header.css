@@ -22,7 +22,7 @@ header {
 }
 
 #profilePic:hover {
-  margin-top: -5px;
+  transform: translateY(-3px);
   transition: 0.1s;
 }
 
@@ -40,10 +40,9 @@ header {
 }
 
 #role:hover {
-  font-weight: 600;
-  letter-spacing: 0.2em;
   transition: 0.1s;
   cursor: pointer;
+  color: #008fcc;
 }
 
 #flagContainer {
@@ -61,7 +60,7 @@ header {
 }
 
 .flags:hover {
-  margin-top: -5px;
+  transform: translateY(-3px);
   transition: 0.1s;
 }
 

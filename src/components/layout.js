@@ -2,7 +2,7 @@ import * as React from "react";
 import PropTypes from "prop-types";
 
 import "./layout.css";
-import Footer from "../components/footer";
+import Footer from "./nav/footer";
 
 const Layout = ({ children }) => {
   return (

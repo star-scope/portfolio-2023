@@ -1,11 +1,10 @@
 import * as React from "react";
 import { Link } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
 
 import Layout from "../components/layout";
 import Seo from "../components/seo";
-import HomeCard from "../components/card";
-import Header from "../components/header";
+import HomeCard from "../components/cards/card";
+import Header from "../components/nav/header";
 
 const IndexPage = () => {
   return (
@@ -13,10 +12,10 @@ const IndexPage = () => {
       <Header />
       <div id="mainContainer">
         <main id="cardContainer">
-          <HomeCard id="section1" title="PROFESSIONAL WORK" image="/images/card1.png" />
+          <Link to="/work/"><HomeCard id="section1" title="PROFESSIONAL WORK" image="/images/card1.png" /></Link>
           <HomeCard id="section2" title="SIDE PROJECTS" image="/images/card2.png" />
           <HomeCard id="section3" title="STACK" image="/images/card3.png" />
-          <HomeCard id="section4" title="CREDENTIALS" image="/images/card4.png" />
+          <Link to="/credentials/"><HomeCard id="section4" title="CREDENTIALS" image="/images/card4.png" /></Link>
         </main>
       </div>
     </Layout>

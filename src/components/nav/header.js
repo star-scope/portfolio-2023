@@ -1,5 +1,5 @@
 import * as React from "react"
-import AniLink from "gatsby-plugin-transition-link/AniLink";
+import { Link } from "gatsby";
 
 import "./header.css"
 
@@ -7,9 +7,9 @@ const Header = () => {
     return (
     <div id="headerContainer">
         <header>
-            <AniLink fade to="/about/" duration={1}>
+            <Link to="/about/">
                 <img id="profilePic" src="/images/Finished-min.jpg"></img>
-            </AniLink>
+            </Link>
             <section id="title">
                 <h1>MY NAME IS CALEB FAULKNER</h1>
                 <p class="bodyCopy">DESIGN TECHNOLOGIST - <a id="role" href="https://tactacam.com" target="blank">TACTACAM</a></p>
