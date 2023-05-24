@@ -1,6 +1,5 @@
 import * as React from "react";
 import { Link } from "gatsby";
-
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 import HomeCard from "../components/cards/card";
@@ -13,8 +12,8 @@ const IndexPage = () => {
       <div id="mainContainer">
         <main id="cardContainer">
           <Link to="/work/"><HomeCard id="section1" title="PROFESSIONAL WORK" image="/images/card1.png" /></Link>
-          <HomeCard id="section2" title="SIDE PROJECTS" image="/images/card2.png" />
-          <HomeCard id="section3" title="STACK" image="/images/card3.png" />
+          <Link to="/sideprojects/"><HomeCard id="section2" title="SIDE PROJECTS" image="/images/card2.png" /></Link>
+          <Link to="/stack/"><HomeCard id="section3" title="STACK" image="/images/card3.png" /></Link>
           <Link to="/credentials/"><HomeCard id="section4" title="CREDENTIALS" image="/images/card4.png" /></Link>
         </main>
       </div>

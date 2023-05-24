@@ -33,9 +33,9 @@ const Work = () => {
             <main id="workContainer">
               <Link to="https://starscope.notion.site/Tactacam-Reveal-cfbca692e05e43db8029edb2917ea52a" target="blank"><WorkCard id="section1" title="TACTACAM REVEAL" subtitle="TRAILCAM APP" image="/images/Reveal.png"/></Link>
               <Link to="https://starscope.notion.site/Tactacam-Connect-9f29ea7ccfc149ddae0cf8e0ccae49e8" target="blank"><WorkCard id="section1" title="TACTACAM CONNECT" subtitle="POV CAMERA APP" image="/images/Connect.png"/></Link>
-              <Link><WorkCard id="section1" title="DESIGN.TACTACAM.COM" subtitle="TACTACAM DESIGN SYSTEM" image="/images/Design System.png"/></Link>
-              <Link><WorkCard id="section1" title="BREAKER NATION" subtitle="MUSIC SHARING SOCIAL MEDIA" image="/images/Breaker.png"/></Link>
-              <Link><WorkCard id="section1" title="XQUISITE MARKETING" subtitle="GRAPHIC DESIGN & BRANDING" image="/images/XM.png"/></Link>
+              <Link to="https://design.ishareit.net" target="blank"><WorkCard id="section1" title="TACTACAM DESIGN SYSTEM" subtitle="PASSWORD: TACTA0HEIGHT" image="/images/Design System.png"/></Link>
+              <Link to="https://starscope.notion.site/Breaker-Nation-4d9efe3eec8f4e35886628b59f69ce5a" target="blank"><WorkCard id="section1" title="BREAKER NATION" subtitle="MUSIC SHARING SOCIAL MEDIA" image="/images/Breaker.png"/></Link>
+              <Link to="https://starscope.notion.site/Xquisite-Marketing-a126d213e1334e50ba606bb35a09b382" target="blank"><WorkCard id="section1" title="XQUISITE MARKETING" subtitle="GRAPHIC DESIGN & BRANDING" image="/images/XM.png"/></Link>
               <Link><WorkCard id="section1" title="TACTACAM SECURITY" subtitle2="COMING SOON" image="/images/Security.png"/></Link>
             </main>
           </div>
