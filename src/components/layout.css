@@ -194,6 +194,16 @@ h1 {
 
 /* Media Queries */
 
+@media (min-width: 1950px) {
+  .s2 {
+    font-size: 18px;
+  }
+
+  .s3 {
+    font-size: 15px;
+  }
+}
+
 @media (max-width: 1000px) {
   #cardContainer {
     grid-template-columns: repeat(2, 1fr);

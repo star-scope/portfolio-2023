@@ -26,7 +26,7 @@ form input {
 
 form input:focus {
   border: none;
-  outline: thin solid;
+  outline: 2px solid;
   outline-color: #00a9fb;
 }
 
@@ -58,4 +58,19 @@ form button {
   font-weight: 700;
   font-size: 12px;
   letter-spacing: 0.35em;
+}
+
+@media (min-width: 1950px) {
+  form input {
+    height: 50px;
+    font-size: 20px;
+  }
+
+  .buttonWrapper {
+    height: 50px;
+  }
+
+  form button {
+    font-size: 15px;
+  }
 }
