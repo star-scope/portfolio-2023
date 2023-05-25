@@ -47,3 +47,30 @@
     transform: translateY(-3px);
     transition: 0.1s;
   }
+
+  #FullPP {
+    display: none;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+  }
+
+  @media (min-width: 1950px) {
+    #spacer-top {
+      margin-top: 135px;
+    }
+
+    .body {
+      color: #CCCCCC;
+      font-family: 'Satoshi Variable';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 30px;
+      letter-spacing: 0.1em;
+      max-width: 45%;
+      margin-left: 10%;
+    }
+  }

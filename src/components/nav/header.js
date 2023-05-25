@@ -8,7 +8,7 @@ const Header = () => {
     <div id="headerContainer">
         <header>
             <Link to="/about/">
-                <img id="profilePic" src="/images/Finished-min.jpg"></img>
+                <img id="profilePic" src="/images/PP.png"></img>
             </Link>
             <section id="title">
                 <h1>MY NAME IS CALEB FAULKNER</h1>
