@@ -42,7 +42,7 @@ const Work = () => {
         </Layout>
       ) : (
         <div className="passwordWrapper">
-          <img id="logo" src="/images/logo.png"></img>
+          <img id="logo" src="/images/Logo.png"></img>
           <h1 id="section1">PLEASE ENTER PASSWORD</h1>
           <form onSubmit={handlePasswordSubmit}>
             <input id="section2" type="password" name="password"/>

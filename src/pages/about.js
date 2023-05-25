@@ -18,8 +18,8 @@ const About = () => (
       <p id="section4" className="body">You can learn more about me at the social links below. You can also check out my <a href="https://read.cv/starscope" target="_blank" rel="noopener noreferrer">resume</a>.</p>
     </div>
     <div id="linkGrid">
-      <a id="section1" href="https://twitter.com/whostarscope" target="_blank" rel="noopener noreferrer"><img className="link" src="../images/twitter.svg" alt="Twitter" /></a>
-      <a id="section2" href="https://github.com/star-scope/" target="_blank" rel="noopener noreferrer"><img className="link" src="../images/github.svg" alt="GitHub" /></a>
+      <a id="section1" href="https://twitter.com/whostarscope" target="_blank" rel="noopener noreferrer"><img className="link" src="/images/Twitter.svg"/></a>
+      <a id="section2" href="https://github.com/star-scope/" target="_blank" rel="noopener noreferrer"><img className="link" src="/images/GitHub.svg"/></a>
     </div>
     <img id="FullPP" src="/images/FullPP.jpg"></img>
   </Layout>
