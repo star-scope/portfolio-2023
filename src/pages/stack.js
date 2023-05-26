@@ -122,6 +122,4 @@ const Stack = () => (
   </>
 );
 
-export const Head = () => <Seo title="Page two" />;
-
 export default Stack;

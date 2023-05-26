@@ -23,10 +23,12 @@ const Work = () => {
   
     if (enteredPassword.trim() === '') {
       toast.error('Please enter a password');
+      toast.dismiss();
     } else if (enteredPassword === correctPassword) {
       setHasAccess(true);
     } else {
       toast.error('Password Incorrect');
+      toast.dismiss();
     }
   };
 

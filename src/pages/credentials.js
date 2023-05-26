@@ -57,6 +57,4 @@ const Credentials = () => (
   </>
 );
 
-export const Head = () => <Seo title="About" />;
-
 export default Credentials;
