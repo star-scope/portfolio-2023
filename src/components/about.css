@@ -22,6 +22,7 @@
     text-decoration: none;
     color: #00a9fb;
     transition: color 0.3s;
+    aspect-ratio: 1 / 1;
   }
   
   a:hover {
@@ -30,12 +31,12 @@
   
   #linkGrid {
     display: inline-grid;
-    grid-template-columns: repeat(2, 24px);
+    grid-template-columns: repeat(3, 24px);
     align-items: center;
     justify-items: center;
     grid-gap: 40px;
     margin-left: 10%;
-    margin-top: 50px;
+    margin-top: 10%;
     transition: 0.1s;
   }
   
@@ -60,6 +61,10 @@
   @media (min-width: 1950px) {
     #spacer-top {
       margin-top: 135px;
+    }
+
+    #linkGrid {
+      margin-top: 15%;
     }
 
     .body {

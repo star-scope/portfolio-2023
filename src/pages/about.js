@@ -25,6 +25,7 @@ const About = () => (
       <div id="linkGrid">
         <a id="section1" href="https://twitter.com/whostarscope" target="_blank" rel="noopener noreferrer"><img className="link" src="/images/Twitter.svg" alt="Twitter Link"/></a>
         <a id="section2" href="https://github.com/star-scope/" target="_blank" rel="noopener noreferrer"><img className="link" src="/images/GitHub.svg" alt="GitHub Link"/></a>
+        <a id="section2" href="mailto:contact@starscope.design?subject=Hello!" target="_blank" rel="noopener noreferrer"><img className="link" src="/images/Email.svg" alt="Email Link"/></a>
       </div>
       <img id="FullPP" src="/images/FullPP.jpg" alt="Profile"></img>
     </Layout>

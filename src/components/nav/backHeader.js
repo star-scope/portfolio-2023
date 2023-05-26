@@ -15,8 +15,18 @@ const BackButtonHeader = props => {
           <h1>{props.title}</h1>
         </div>
         <section id="flagContainer">
-          <button onClick={() => toast.message('Flag Of The United States of America', {description: 'I was born in Atlanta, GA. I love my country and am proud to be an American citizen.',})}><img class="flags" src="/images/Flag-US.png"></img></button>
-          <button onClick={() => toast.message('Flag Of Planet Earth', {description: 'I love to travel, and have been to 24 U.S. states, and 8 countries! My favorite adventure was in Alaska.',})}><img class="flags" src="/images/Flag-Earth.png"></img></button>
+        <button onClick={() => {
+            toast.dismiss(); 
+            toast.message('Flag Of The United States of America', {description: 'I was born in Atlanta, GA. I love my country and am proud to be an American citizen.',});
+                }}>
+            <img class="flags" src="/images/Flag-US.png"></img>
+        </button>
+        <button onClick={() => {
+            toast.dismiss(); 
+            toast.message('Flag Of Planet Earth', {description: 'I love to travel, and have been to 24 U.S. states, and 8 countries! My favorite adventure was in Alaska.',});
+                }}>
+            <img class="flags" src="/images/Flag-Earth.png"></img>
+        </button>
         </section>
         <Toaster toastOptions={{ style: { background: '#101010', borderRadius: '10px' },}} visibleToasts={1} position="top-right" duration={'50000'} closeButton theme="dark" />
       </header>
