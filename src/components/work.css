@@ -60,6 +60,11 @@ form button {
   letter-spacing: 0.35em;
 }
 
+.toast {
+  font-family: 'Satoshi Variable';
+  font-weight: 700;
+}
+
 @media (min-width: 1950px) {
   form input {
     height: 50px;

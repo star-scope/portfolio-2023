@@ -170,28 +170,6 @@ h1 {
   justify-content: center;
 }
 
-#notFoundContainer {
-  width: 40%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin: 0 auto;
-  color: #cccccc;
-}
-
-#notFoundCopy {
-  margin-top: 50px;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 30px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-}
-
 /* Media Queries */
 
 @media (min-width: 1950px) {

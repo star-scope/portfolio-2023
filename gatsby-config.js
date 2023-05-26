@@ -1,13 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `Portfolio - Caleb Faulkner`,
-    description: `Check out my work!`,
+    title: `Starscope`,
+    description: `Check out my portfolio!`,
     author: `Caleb Faulkner`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    siteUrl: `https://starscope.design/`,
   },
   plugins: [
-    `gatsby-plugin-image`,
-    `gatsby-plugin-transition-link`,
+    // Gatsby's data processing layer begins with “source” plugins. Here the filesystem plugin is sourcing a directory of images
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -15,18 +14,23 @@ module.exports = {
         path: `${__dirname}/static/images`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+
+    // The following plugins transform content and data in this site: 
+    `gatsby-plugin-image`,  // Optimizes site images
+    `gatsby-transformer-sharp`,  // Processes images in GraphQL queries
+    `gatsby-plugin-sharp`,  // Provides several image processing functions
+    
+    // The transition link plugin allows for animated transitions between Gatsby pages
+    `gatsby-plugin-transition-link`,
+    
+    // The manifest plugin allows users to add this site to their home screen on most mobile browsers
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Starscope`,
+        short_name: `Starscope`,
         start_url: `/`,
-        background_color: `#663399`,
-        // This will impact how browsers show your PWA/website
-        // https://css-tricks.com/meta-theme-color-and-trickery/
-        // theme_color: `#663399`,
+        background_color: `#111111`,
         display: `minimal-ui`,
         icon: `src/images/fav.png`, // This path is relative to the root of the site.
       },

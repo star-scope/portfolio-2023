@@ -82,6 +82,11 @@ header {
   transition: 0.1s;
 }
 
+button {
+  background-color: #111111;
+  border: none;
+}
+
 @media (max-width: 820px) {
   .bodyCopy {
     max-width: 300px;

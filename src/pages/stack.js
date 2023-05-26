@@ -1,95 +1,127 @@
-import * as React from "react"
-import { Link } from "gatsby"
-import BackButtonHeader from "../components/nav/backHeader"
-import Layout from "../components/layout"
-import Seo from "../components/seo"
-import StackCard from "../components/cards/stackCard"
-import StackCard2 from "../components/cards/stackCard2"
+import * as React from "react";
+
+//Components
+import Layout from "../components/layout";
+import Seo from "../components/seo";
+import BackButtonHeader from "../components/nav/backHeader";
+import StackCard from "../components/cards/stackCard";
+
+const stackSections = [
+  {
+    id: "section1",
+    title: "DESIGN",
+    image: "/images/Empty.png",
+    links: [
+      "https://www.figma.com/design/",
+      "https://www.framer.com/",
+      "https://www.adobe.com/products/xd/learn/get-started/what-is-adobe-xd-used-for.html",
+      "https://www.adobe.com/products/aftereffects.html",
+      "https://www.adobe.com/products/photoshop.html",
+      "https://www.adobe.com/products/illustrator.html",
+      "https://www.adobe.com/products/photoshop-lightroom.html",
+      "https://www.adobe.com/products/indesign.html",
+      "https://www.maxon.net/en/cinema-4d",
+      "https://home.otoy.com/render/octane-render/",
+      "https://lottiefiles.com/"
+    ],
+    images: [
+      "/images/stack/Figma.png",
+      "/images/stack/Framer.png",
+      "/images/stack/XD.png",
+      "/images/stack/AE.png",
+      "/images/stack/PS.png",
+      "/images/stack/AI.png",
+      "/images/stack/LR.png",
+      "/images/stack/ID.png",
+      "/images/stack/C4D.png", 
+      "/images/stack/Octane.png", 
+      "/images/stack/Lottie.png",
+    ],
+  },
+  {
+    itemsPerRow: 2,
+    id: "section2",
+    title: "DEVELOPMENT",
+    image: "/images/Empty.png",
+    links: [
+      "https://code.visualstudio.com/",
+      "https://github.com/",
+      "https://www.w3.org/standards/webdesign/htmlcss",
+      "https://www.w3.org/standards/webdesign/htmlcss",
+      "https://react.dev/",
+      "https://www.swift.org/",
+    ],
+    images: [
+      "/images/stack/VSC.png",
+      "/images/stack/GH.png",
+      "/images/stack/HTML.png",
+      "/images/stack/CSS.png",
+      "/images/stack/React.png",
+      "/images/stack/Swift.png",
+    ],
+  },
+  {
+    itemsPerRow: 2,
+    id: "section3",
+    title: "PERSONAL",
+    image: "/images/Empty.png",
+    links: [
+      "https://arc.net/",
+      "https://discord.com/",
+      "https://slack.com/",
+      "https://signal.org/en/",
+      "https://metamask.io/",
+      "https://coinbase.com/",
+    ],
+    images: [
+      "/images/stack/Arc.png",
+      "/images/stack/Discord.png",
+      "/images/stack/Slack.png",
+      "/images/stack/Signal.png",
+      "/images/stack/MM.png",
+      "/images/stack/CB.png",
+    ],
+  },
+  {
+    itemsPerRow: 2,
+    id: "section4",
+    title: "OTHER",
+    image: "/images/Empty.png",
+    links: [
+      "https://www.apple.com/logic-pro/",
+      "https://www.ableton.com/en/live/",
+      "https://www.apple.com/final-cut-pro/",
+      "https://www.adobe.com/products/premiere.html",
+      "https://www.office.com/",
+      "https://www.notion.so/product",
+    ],
+    images: [
+      "/images/stack/Logic.png",
+      "/images/stack/Ableton.png",
+      "/images/stack/FC.png",
+      "/images/stack/PR.png",
+      "/images/stack/365.png",
+      "/images/stack/Notion.png",
+    ],
+  },
+];
 
 const Stack = () => (
-  <Layout>
+  <>
+    <Seo title="Stack" />
+    <Layout>
       <BackButtonHeader title="STACK" />
       <div id="mainContainer">
         <main id="cardContainer">
-          <StackCard 
-            id="section1" 
-            title="DESIGN" 
-            image="/images/Empty.png"
-            link1="https://www.figma.com/design/"
-            link2="https://www.framer.com/"
-            link3="https://www.adobe.com/products/xd/learn/get-started/what-is-adobe-xd-used-for.html"
-            link4="https://www.adobe.com/products/aftereffects.html"
-            link5="https://www.adobe.com/products/photoshop.html"
-            link6="https://www.adobe.com/products/illustrator.html"
-            link7="https://www.adobe.com/products/photoshop-lightroom.html"
-            link8="https://www.adobe.com/products/indesign.html"
-            link9="https://www.maxon.net/en/cinema-4d"
-            link10="https://home.otoy.com/render/octane-render/"
-            link11="https://lottiefiles.com/"
-            image1="/images/stack/Figma.png" 
-            image2="/images/stack/Framer.png" 
-            image3="/images/stack/XD.png" 
-            image4="/images/stack/AE.png" 
-            image5="/images/stack/PS.png" 
-            image6="/images/stack/AI.png" 
-            image7="/images/stack/LR.png" 
-            image8="/images/stack/ID.png" 
-            image9="/images/stack/C4D.png" 
-            image10="/images/stack/Octane.png" 
-            image11="/images/stack/Lottie.png"/>
-          <StackCard2 
-            id="section2" 
-            title="DEVELOPMENT" 
-            image="/images/Empty.png"
-            link1="https://code.visualstudio.com/"
-            link2="https://github.com/"
-            link3="https://www.w3.org/standards/webdesign/htmlcss"
-            link4="https://www.w3.org/standards/webdesign/htmlcss"
-            link5="https://react.dev/"
-            link6="https://www.swift.org/"
-            image1="/images/stack/VSC.png" 
-            image2="/images/stack/GH.png" 
-            image3="/images/stack/HTML.png" 
-            image4="/images/stack/CSS.png" 
-            image5="/images/stack/React.png" 
-            image6="/images/stack/Swift.png"/>
-          <StackCard2 
-            id="section3" 
-            title="PERSONAL" 
-            image="/images/Empty.png"
-            link1="https://arc.net/"
-            link2="https://discord.com/"
-            link3="https://slack.com/"
-            link4="https://signal.org/en/"
-            link5="https://metamask.io/"
-            link6="https://coinbase.com/"
-            image1="/images/stack/Arc.png" 
-            image2="/images/stack/Discord.png" 
-            image3="/images/stack/Slack.png" 
-            image4="/images/stack/Signal.png" 
-            image5="/images/stack/MM.png" 
-            image6="/images/stack/CB.png"/>
-          <StackCard2 
-            id="section4" 
-            title="OTHER" 
-            image="/images/Empty.png"
-            link1="https://www.apple.com/logic-pro/"
-            link2="https://www.ableton.com/en/live/"
-            link3="https://www.apple.com/final-cut-pro/"
-            link4="https://www.adobe.com/products/premiere.html"
-            link5="https://www.office.com/"
-            link6="https://www.notion.so/product" 
-            image1="/images/stack/Logic.png" 
-            image2="/images/stack/Ableton.png" 
-            image3="/images/stack/FC.png" 
-            image4="/images/stack/PR.png" 
-            image5="/images/stack/365.png" 
-            image6="/images/stack/Notion.png"/>
+          {stackSections.map((section) => (
+            <StackCard {...section} itemsPerRow={section.itemsPerRow || 4} />
+          ))}
         </main>
       </div>
-  </Layout>
-)
+    </Layout>
+  </>
+);
 
-export const Head = () => <Seo title="Page two" />
+export const Head = () => <Seo title="Page two" />;
 
-export default Stack
+export default Stack;
