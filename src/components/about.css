@@ -36,8 +36,8 @@
     justify-items: center;
     grid-gap: 40px;
     margin-left: 10%;
-    margin-top: 10%;
     transition: 0.1s;
+    margin-top: 5%;
   }
   
   .link {

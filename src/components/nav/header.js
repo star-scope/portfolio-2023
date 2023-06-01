@@ -8,7 +8,7 @@ const Header = () => {
     return (
     <div id="headerContainer">
         <header>
-            <Link to="/about/">
+            <Link id="PPContainer" to="/about/">
                 <img id="profilePic" src="/images/PP.png"></img>
             </Link>
             <section id="title">
