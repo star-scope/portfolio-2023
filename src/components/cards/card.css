@@ -1,6 +1,7 @@
-.link {
+#link {
   aspect-ratio: 19 / 5;
   min-width: 380px;
+  transition: .1s;
 }
 
 .Card, .StackCard {
@@ -27,7 +28,7 @@
   border-radius: 14px;
 }
 
-.Card:hover, .credCard:hover, .link:hover {
+.Card:hover, .credCard:hover, #link:hover {
     transform: translateY(-5px);
     transition: .1s;
 }
