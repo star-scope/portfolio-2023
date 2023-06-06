@@ -1,3 +1,8 @@
+.link {
+  aspect-ratio: 19 / 5;
+  min-width: 380px;
+}
+
 .Card, .StackCard {
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.35);
     border-radius: 15px;
@@ -22,7 +27,7 @@
   border-radius: 14px;
 }
 
-.Card:hover, .credCard:hover, .workCard:hover {
+.Card:hover, .credCard:hover, .link:hover {
     transform: translateY(-5px);
     transition: .1s;
 }
