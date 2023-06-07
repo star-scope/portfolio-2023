@@ -40,11 +40,11 @@
     margin-top: 5%;
   }
   
-  .link {
+  .aboutLink {
     transition: 0.1s;
   }
   
-  .link:hover {
+  .aboutLink:hover {
     transform: translateY(-3px);
     transition: 0.1s;
   }
