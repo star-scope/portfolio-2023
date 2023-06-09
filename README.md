@@ -11,4 +11,4 @@ starscope.design serves as a home to showcase my work, side projects, stack, and
 
 Enjoy perusing the site. I left a fair amount of subtle details and easter eggs to find.
 
-You can contact me [here](mailto:contact@starscope.design?subject=Hello!) or on Discord at Starscope#8545.
+You can contact me [here](mailto:contact@starscope.design?subject=Hello!) or on Discord at starscope.
