@@ -6,8 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
-  },
+    "lint": "next lint",
+    "predeploy": "next build && next export",
+    "deploy": "gh-pages -d out"
+  },  
   "dependencies": {
     "@types/node": "20.4.0",
     "@types/react-dom": "18.2.6",
@@ -21,6 +23,7 @@
   },
   "devDependencies": {
     "@types/react": "^18.2.14",
+    "gh-pages": "^5.0.0",
     "typescript": "^5.1.6"
   }
 }
