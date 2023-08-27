@@ -1,6 +1,7 @@
 import React from 'react';
 import { AppProps } from 'next/app';
 import '../src/styles/styles.css';
+import '../src/app/globals.css';
 import Footer from '../src/components/nav/footer';
 import Head from 'next/head'
 
