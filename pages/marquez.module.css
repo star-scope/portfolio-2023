@@ -19,7 +19,7 @@
 }
 
 .buttonWrapper {
-  margin-top: 75px;
+  margin-top: 70px;
   margin-bottom: 100px;
   width: 15%;
   background: linear-gradient(175deg, #555555 0%, rgba(17, 17, 17, 0) 83.33%);
@@ -77,4 +77,31 @@
 .image:hover {
   transform: translateY(-3px);
   transition: .2s;
+}
+
+@media (max-width: 640px) {
+
+  .icon {
+    position: absolute;
+    margin-top: 50px;
+    margin-left: 30px;
+  }
+
+  .form > * {
+    align-self:  flex-end;
+    margin-right: 20px;
+  }
+
+  .buttonWrapper {
+    margin-top: 70px;
+    margin-bottom: 70px;
+    width: 50%;
+    background: linear-gradient(175deg, #555555 0%, rgba(17, 17, 17, 0) 83.33%);
+    border-radius: 10px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    transition: 0.3s !important;
+
+  }  
 }
