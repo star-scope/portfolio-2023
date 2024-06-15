@@ -21,7 +21,7 @@ interface Photo {
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
-    const authClient = await auth.getClient();
+    const authClient = (await auth.getClient()) as any;
     google.options({ auth: authClient });
 
     const folderId = process.env.YOUR_GOOGLE_DRIVE_FOLDER_ID;
