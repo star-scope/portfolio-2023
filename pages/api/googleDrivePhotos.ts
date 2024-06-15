@@ -11,27 +11,37 @@ const auth = new google.auth.GoogleAuth({
   scopes: ['https://www.googleapis.com/auth/drive.readonly'],
 });
 
+// Define the Photo interface
+interface Photo {
+  id: string;
+  name: string;
+  thumbnailLink: string;
+}
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
-    const authClient = (await auth.getClient()) as any; // Explicit type assertion
+    const authClient = await auth.getClient();
     google.options({ auth: authClient });
 
     const folderId = process.env.YOUR_GOOGLE_DRIVE_FOLDER_ID;
+    if (!folderId) {
+      throw new Error('Missing Google Drive Folder ID');
+    }
 
-    let photos = [];
+    let photos: Photo[] = [];
     let pageToken: string | null = null;
 
     do {
-      const response = await drive.files.list({
+      const response: drive_v3.Schema$FileList = await drive.files.list({
         q: `'${folderId}' in parents and mimeType contains 'image/'`,
         fields: 'nextPageToken, files(id, name, thumbnailLink)',
         pageToken: pageToken || undefined,
       });
 
       if (response.data.files) {
-        photos = photos.concat(response.data.files);
+        photos = photos.concat(response.data.files as Photo[]);
       }
-      pageToken = response.data.nextPageToken;
+      pageToken = response.data.nextPageToken || null;
     } while (pageToken);
 
     res.status(200).json(photos);
