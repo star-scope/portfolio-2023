@@ -21,7 +21,7 @@ interface Photo {
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
-    const authClient = (await auth.getClient()) as any;
+    const authClient = await auth.getClient();
     google.options({ auth: authClient });
 
     const folderId = process.env.YOUR_GOOGLE_DRIVE_FOLDER_ID;
@@ -48,6 +48,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     res.status(200).json(photos);
   } catch (error) {
     console.error('Error fetching photos from Google Drive:', error);
-    res.status(500).json({ error: 'Error fetching photos from Google Drive' });
+    if (error instanceof Error) {
+      res.status(500).json({ error: error.message });
+    } else {
+      res.status(500).json({ error: 'Unknown error' });
+    }
   }
 }
