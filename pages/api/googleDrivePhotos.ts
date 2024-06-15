@@ -1,5 +1,6 @@
 import { google, drive_v3 } from 'googleapis';
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { GaxiosResponse } from 'gaxios';
 
 const drive = google.drive('v3');
 
@@ -20,7 +21,7 @@ interface Photo {
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
-    const authClient = await auth.getClient();
+    const authClient = (await auth.getClient()) as any;
     google.options({ auth: authClient });
 
     const folderId = process.env.YOUR_GOOGLE_DRIVE_FOLDER_ID;
@@ -32,7 +33,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     let pageToken: string | null = null;
 
     do {
-      const response: drive_v3.Schema$FileList = await drive.files.list({
+      const response: GaxiosResponse<drive_v3.Schema$FileList> = await drive.files.list({
         q: `'${folderId}' in parents and mimeType contains 'image/'`,
         fields: 'nextPageToken, files(id, name, thumbnailLink)',
         pageToken: pageToken || undefined,
