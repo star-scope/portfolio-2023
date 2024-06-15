@@ -1,12 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { AppProps } from 'next/app';
+import { useRouter } from 'next/router';
+import Head from 'next/head';
+import Footer from '../src/components/nav/footer';
 import '../src/styles/styles.css';
 import '../src/app/globals.css';
-import Footer from '../src/components/nav/footer';
-import Head from 'next/head'
-
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
+  const router = useRouter();
+
+  useEffect(() => {
+    const body = document.body;
+    if (router.pathname === '/marquez') {
+      body.classList.add('marquez-page');
+    } else {
+      body.classList.remove('marquez-page');
+    }
+    console.log('Current body class:', body.className);
+  }, [router.pathname]);
+
   return (
     <div>
       <Head>
@@ -15,7 +27,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
       <main>
         <Component {...pageProps} />
       </main>
-      <Footer />
+      {router.pathname !== '/marquez' && <Footer />}
     </div>
   );
 };

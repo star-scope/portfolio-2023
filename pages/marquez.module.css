@@ -1,0 +1,80 @@
+.icon {
+  position: absolute;
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.form > * {
+  align-self:  flex-end;
+  margin-right: 100px;
+}
+
+.buttonWrapper {
+  margin-top: 75px;
+  margin-bottom: 100px;
+  width: 15%;
+  background: linear-gradient(175deg, #555555 0%, rgba(17, 17, 17, 0) 83.33%);
+  border-radius: 10px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  transition: 0.3s !important;
+}
+
+.buttonWrapper:hover {
+  transform: translateY(-3px) !important;
+  transition: 0.3s !important;
+}
+
+.button {
+  cursor: pointer;
+  margin: 0 auto;
+  height: 95%;
+  width: 99.5%;
+  border-radius: 9px;
+  color: #cccccc;
+  border: none;
+  background: linear-gradient(180deg, #222222 0%, #181818 100%);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.35);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.35em;
+}
+
+.masonryWrapper {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.myMasonryGrid {
+  display: flex;
+  margin-left: -15px;
+}
+
+.myMasonryGridColumn {
+  padding-left: 15px;
+  background-clip: padding-box;
+}
+
+.myMasonryGridColumn > div {
+  margin-bottom: 30px;
+}
+
+.image {
+  padding-bottom: 10px;
+  transition: .2s;
+}
+
+.image:hover {
+  transform: translateY(-3px);
+  transition: .2s;
+}
