@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import Head from 'next/head'
 import axios from 'axios';
 
@@ -15,21 +15,52 @@ interface Photo {
   permalink: string;
 }
 
+interface PhotosResponse {
+  media: Photo[];
+  nextCursor: string | null;
+}
+
 const Photography: React.FC = () => {
   const [photos, setPhotos] = useState<Photo[]>([]);
+  const [nextCursor, setNextCursor] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+  const sentinelRef = useRef<HTMLDivElement>(null);
+  const hasFetchedFirstPage = useRef(false);
+
+  const loadMore = useCallback(async (after?: string) => {
+    setLoading(true);
+    try {
+      const response = await axios.get<PhotosResponse>('/api/instagram/photos', {
+        params: after ? { after } : {},
+      });
+      setPhotos((prev) => (after ? [...prev, ...response.data.media] : response.data.media));
+      setNextCursor(response.data.nextCursor);
+    } catch (error) {
+      console.error('Error fetching Instagram photos:', error);
+    } finally {
+      setLoading(false);
+    }
+  }, []);
 
   useEffect(() => {
-    const fetchPhotos = async () => {
-      try {
-        const response = await axios.get<Photo[]>('/api/instagram/photos');
-        setPhotos(response.data);
-      } catch (error) {
-        console.error('Error fetching Instagram photos:', error);
-      }
-    };
+    if (hasFetchedFirstPage.current) return;
+    hasFetchedFirstPage.current = true;
+    loadMore();
+  }, [loadMore]);
 
-    fetchPhotos();
-  }, []);
+  useEffect(() => {
+    const sentinel = sentinelRef.current;
+    if (!sentinel) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting && nextCursor && !loading) {
+        loadMore(nextCursor);
+      }
+    });
+
+    observer.observe(sentinel);
+    return () => observer.disconnect();
+  }, [nextCursor, loading, loadMore]);
 
   return (
     <>
@@ -40,10 +71,11 @@ const Photography: React.FC = () => {
       <div className={styles.grid}>
         {photos.map((photo) => (
           <a key={photo.id} href={photo.permalink} target="_blank" rel="noopener noreferrer">
-            <img className={styles.image} src={photo.media_url} alt="" />
+            <img className={styles.image} src={photo.media_url} alt="" loading="lazy" />
           </a>
         ))}
       </div>
+      <div ref={sentinelRef} />
     </>
   );
 };

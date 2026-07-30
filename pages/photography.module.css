@@ -1,6 +1,6 @@
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(6, 1fr);
   gap: 10px;
   width: 80%;
   margin: 7% auto;
@@ -12,11 +12,23 @@
   aspect-ratio: 1 / 1;
   object-fit: cover;
   display: block;
+  transition: 0.1s;
+}
+
+.image:hover {
+  transform: translateY(-5px);
+  transition: 0.1s;
+}
+
+@media (max-width: 1000px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 @media (max-width: 640px) {
   .grid {
     width: 90%;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
   }
 }

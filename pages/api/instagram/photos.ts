@@ -8,8 +8,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return res.status(503).json({ error: 'Instagram is not connected yet.' });
     }
 
-    const media = await fetchInstagramMedia(token);
-    res.status(200).json(media);
+    const { after } = req.query;
+    const page = await fetchInstagramMedia(token, {
+      after: typeof after === 'string' ? after : undefined,
+    });
+    res.status(200).json(page);
   } catch (error) {
     console.error('Error fetching Instagram media:', error);
     const message = error instanceof Error ? error.message : 'Unknown error';

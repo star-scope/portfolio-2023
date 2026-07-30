@@ -109,12 +109,23 @@ export async function refreshLongLivedToken(currentToken: string): Promise<strin
   return data.access_token;
 }
 
-export async function fetchInstagramMedia(token: string, limit = 50): Promise<InstagramMedia[]> {
+export interface InstagramMediaPage {
+  media: InstagramMedia[];
+  nextCursor: string | null;
+}
+
+export async function fetchInstagramMedia(
+  token: string,
+  { after, limit = 50 }: { after?: string; limit?: number } = {}
+): Promise<InstagramMediaPage> {
   const params = new URLSearchParams({
     fields: 'id,media_type,media_url,permalink',
     limit: String(limit),
     access_token: token,
   });
+  if (after) {
+    params.set('after', after);
+  }
 
   const response = await fetch(`https://graph.instagram.com/me/media?${params}`);
 
@@ -123,5 +134,8 @@ export async function fetchInstagramMedia(token: string, limit = 50): Promise<In
   }
 
   const data = await response.json();
-  return (data.data as InstagramMedia[]).filter((item) => item.media_type === 'IMAGE');
+  const media = (data.data as InstagramMedia[]).filter((item) => item.media_type === 'IMAGE');
+  const nextCursor: string | null = data.paging?.cursors?.after ?? null;
+
+  return { media, nextCursor };
 }
