@@ -10,13 +10,15 @@ const About: React.FC = () => (
   <>
     <BackButtonHeader title="ABOUT"/>
     <div id={styles.spacerTop}>
-      <p id="section1" className={styles.body}>Hi, I’m Caleb. I’m a Designer based in Atlanta, GA. I currently work as a Design Technologist for Tactacam. Tactacam makes POV cameras and trailcams for hunting, security cameras for home defense, and various other products. I work on our mobile and web apps that allow you to connect your devices to these cameras, along with our internal and user facing websites. Our main apps are called <a className={styles.a} href="https://apps.apple.com/gr/app/tactacam-connect/id1589965130" target="_blank" rel="noopener noreferrer">Tactacam Connect</a>, <a className={styles.a} href="https://apps.apple.com/us/app/tactacam-reveal/id1515339989" target="_blank" rel="noopener noreferrer">Tactacam Reveal</a>, and Tactacam Security. I am also working on a partnership app for Cabella’s/Bass Pro Shops, and a variety of other personal projects.</p>
+      <p id="section1" className={styles.body}>Hi, I’m Caleb, a Senior UX/UI Designer based in Billings, MT. I currently work at Tactacam, where I lead design across our mobile apps, web experiences, and digital products. Tactacam develops industry-leading trail cameras for hunting, security cameras for home protection, and a growing ecosystem of connected products.</p>
       <div className={styles.spacer}></div>
-      <p id="section2" className={styles.body}>My skill sets include UX Design, UI Design, Motion Graphics, Graphic Design, 3D, and Front End Development.</p>
+      <p id="section2" className={styles.body}>I work primarily on <a className={styles.a} href="https://www.tactacam.com" target="_blank" rel="noopener noreferrer">Tactacam Reveal</a>, <a className={styles.a} href="https://www.habitatiq.com" target="_blank" rel="noopener noreferrer">HabitatIQ</a>, and our partnership app for Cabela’s. HabitatIQ helps hunters better understand and manage their land through mapping, property insights, and habitat planning tools. I also contribute to internal tools, user-facing websites, and a variety of other digital experiences. My focus is creating intuitive, scalable products that balance user needs with business goals.</p>
       <div className={styles.spacer}></div>
-      <p id="section3" className={styles.body}>In my free time, I enjoy creating electronic music, learning new skills, playing video games, and enjoying a nice glass of bourbon.</p>
+      <p id="section3" className={styles.body}>My skill set includes UX Design, UI Design, Motion Graphics, Graphic Design, 3D, and Front-End Development.</p>
       <div className={styles.spacer}></div>
-      <p id="section4" className={styles.body}>You can learn more about me at the social links below. You can also check out my <a className={styles.a} href="https://read.cv/starscope" target="_blank" rel="noopener noreferrer">resume</a>.</p>
+      <p id="section4" className={styles.body}>In my free time, I enjoy producing electronic music, learning new skills, playing video games, and enjoying a nice glass of bourbon.</p>
+      <div className={styles.spacer}></div>
+      <p id="section5" className={styles.body}>You can learn more about me through the social links below, or check out my <a className={styles.a} href="https://read.cv/starscope" target="_blank" rel="noopener noreferrer">resume</a>.</p>
     </div>
     <div id={styles.linkGrid}>
       <a className={styles.a} id="section1" href="https://twitter.com/whostarscope" target="_blank" rel="noopener noreferrer"><img className={styles.aboutLink} src="/images/Twitter.svg" alt="Twitter Link"/></a>

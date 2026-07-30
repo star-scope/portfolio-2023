@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Satoshi Variable';
-    src: url('/static/fonts/Satoshi-Variable.ttf') format('truetype');
+    src: url('/fonts/Satoshi-Variable.ttf') format('truetype');
   }
   
   * {
@@ -12,7 +12,11 @@
     overflow: hidden;
     margin: 0;
   }
-  
+
+  body.marquez-page {
+    overflow: auto;
+  }
+
   #logo {
     max-width: 50px;
     margin-bottom: 50px;
@@ -188,6 +192,11 @@
   #section4 {
     opacity: 0;
     animation: Section 1s .3s forwards;
+  }
+
+  #section5 {
+    opacity: 0;
+    animation: Section 1s .4s forwards;
   }
 
   @keyframes Section {

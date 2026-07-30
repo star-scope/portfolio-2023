@@ -4,7 +4,6 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Footer from '../src/components/nav/footer';
 import '../src/styles/styles.css';
-import '../src/app/globals.css';
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   const router = useRouter();
@@ -16,7 +15,6 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
     } else {
       body.classList.remove('marquez-page');
     }
-    console.log('Current body class:', body.className);
   }, [router.pathname]);
 
   return (

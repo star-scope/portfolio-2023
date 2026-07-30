@@ -13,17 +13,25 @@ const Header: React.FC = () => {
         <section id={styles.title}>
           <h1>MY NAME IS CALEB FAULKNER</h1>
           <p className="bodyCopy">SOFTWARE DESIGNER - <a id={styles.role} href="https://tactacam.com" target="_blank">TACTACAM</a></p>
+          <p className="bodyCopy">
+            <Link id={styles.aboutLink} href="/about/">
+              ABOUT ME
+              <svg className={styles.aboutLinkUnderline} width="100%" height="4" viewBox="0 0 64 4" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 2.5C15 0.5 49 0.5 63 2.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+              </svg>
+            </Link>
+          </p>
         </section>
         <section id={styles.flagContainer}>
           <button className={styles.button} onClick={() => {
             toast.dismiss();
-            toast.message('Flag Of The United States of America', { description: 'I was born in Atlanta, GA. I love my country and am proud to be an American citizen.' });
+            toast.message('Flag Of The United States of America', { description: 'I am from Atlanta, GA, and currently live and work out of Billings, MT.' });
           }}>
             <img className={styles.flags} src="/images/Flag-US.png" />
           </button>
           <button className={styles.button} onClick={() => {
             toast.dismiss();
-            toast.message('Flag Of Planet Earth', { description: 'I love to travel, and have been to 24 U.S. states, and 8 countries! My favorite adventure was in Alaska.' });
+            toast.message('Flag Of Planet Earth', { description: 'I love to travel, and have been to 34 U.S. states, and 9 countries!' });
           }}>
             <img className={styles.flags} src="/images/Flag-Earth.png" />
           </button>

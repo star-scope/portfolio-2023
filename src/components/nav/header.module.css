@@ -48,7 +48,30 @@
     cursor: pointer;
     color: #008fcc;
   }
-  
+
+  #aboutLink {
+    position: relative;
+    display: inline-block;
+    color: #CCCCCC;
+    text-decoration: none;
+    transition: 0.1s;
+  }
+
+  #aboutLink:hover {
+    transition: 0.1s;
+    cursor: pointer;
+    color: #ffffff;
+  }
+
+  .aboutLinkUnderline {
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 4px;
+    color: inherit;
+  }
+
   #flagContainer {
     display: flex;
     gap: 20px;
@@ -76,14 +99,27 @@
   }
   
   #backButton {
+    display: flex;
+    align-items: center;
+    gap: 12px;
     height: 24px;
     z-index: 100;
+    text-decoration: none;
     transition: 0.1s;
   }
-  
+
   #backButton:hover {
     transform: translateX(-3px);
     transition: 0.1s;
+  }
+
+  #backButtonText {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    color: #CCCCCC;
+    text-decoration: none;
   }
   
   .button {

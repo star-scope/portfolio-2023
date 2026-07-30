@@ -14,6 +14,7 @@ const BackButtonHeader: FC<BackButtonHeaderProps> = ({ title }) => {
       <header className={styles.header}>
         <Link id={styles.backButton} href="/">
             <img src="/images/arrow-left.svg"/>
+            <span id={styles.backButtonText}>BACK</span>
         </Link>
         <div id={styles.titleContainer}>
           <h1>{title}</h1>
@@ -21,13 +22,13 @@ const BackButtonHeader: FC<BackButtonHeaderProps> = ({ title }) => {
         <section id={styles.flagContainer}>
           <button className={styles.button} onClick={() => {
               toast.dismiss(); 
-              toast.message('Flag Of The United States of America', {description: 'I was born in Atlanta, GA. I love my country and am proud to be an American citizen.',});
+              toast.message('Flag Of The United States of America', {description: 'I am from Atlanta, GA, and currently live and work out of Billings, MT.',});
                   }}>
               <img className={styles.flags} src="/images/Flag-US.png" />
           </button>
           <button className={styles.button} onClick={() => {
               toast.dismiss(); 
-              toast.message('Flag Of Planet Earth', {description: 'I love to travel, and have been to 24 U.S. states, and 8 countries! My favorite adventure was in Alaska.',});
+              toast.message('Flag Of Planet Earth', {description: 'I love to travel, and have been to 34 U.S. states, and 9 countries!',});
                   }}>
               <img className={styles.flags} src="/images/Flag-Earth.png" />
           </button>
