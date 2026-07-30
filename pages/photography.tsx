@@ -52,11 +52,14 @@ const Photography: React.FC = () => {
     const sentinel = sentinelRef.current;
     if (!sentinel) return;
 
-    const observer = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting && nextCursor && !loading) {
-        loadMore(nextCursor);
-      }
-    });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && nextCursor && !loading) {
+          loadMore(nextCursor);
+        }
+      },
+      { rootMargin: '600px' }
+    );
 
     observer.observe(sentinel);
     return () => observer.disconnect();
@@ -75,7 +78,7 @@ const Photography: React.FC = () => {
           </a>
         ))}
       </div>
-      <div ref={sentinelRef} />
+      <div ref={sentinelRef} style={{ height: 1 }} />
     </>
   );
 };

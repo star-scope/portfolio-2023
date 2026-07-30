@@ -17,6 +17,10 @@
     overflow: auto;
   }
 
+  #__next {
+    position: relative;
+  }
+
   #logo {
     max-width: 50px;
     margin-bottom: 50px;
