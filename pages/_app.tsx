@@ -10,10 +10,11 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
 
   useEffect(() => {
     const body = document.body;
-    if (router.pathname === '/marquez') {
-      body.classList.add('marquez-page');
+    const scrollablePages = ['/marquez', '/photography'];
+    if (scrollablePages.includes(router.pathname)) {
+      body.classList.add('scrollable-page');
     } else {
-      body.classList.remove('marquez-page');
+      body.classList.remove('scrollable-page');
     }
   }, [router.pathname]);
 
