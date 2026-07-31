@@ -46,3 +46,9 @@
 .backButton:hover {
     opacity: 1;
 }
+
+@media (max-width: 640px) {
+    .notFoundContainer {
+        width: calc(100% - 60px);
+    }
+}

@@ -65,6 +65,16 @@
   font-weight: 700;
 }
 
+@media (max-width: 640px) {
+  .passwordWrapper {
+    width: calc(100% - 60px);
+  }
+
+  .form {
+    width: 90%;
+  }
+}
+
 @media (min-width: 1950px) {
   .form input {
     height: 50px;

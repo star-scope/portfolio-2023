@@ -6,7 +6,7 @@ import styles from "./header.module.css";
 const Header: React.FC = () => {
   return (
     <div id={styles.headerContainer}>
-      <header className={styles.header}>
+      <header className={`${styles.header} ${styles.homeHeader}`}>
         <Link id={styles.PPContainer} href="/about/">
           <img id={styles.profilePic} src="/images/PP.png" />
         </Link>

@@ -28,7 +28,7 @@
 
 @media (max-width: 640px) {
   .grid {
-    width: 90%;
+    width: calc(100% - 60px);
     grid-template-columns: repeat(2, 1fr);
   }
 }
