@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import Head from 'next/head'
+
+import { prefetchPhotos } from "../src/lib/instagramPrefetch";
 
 // Styles
 // import styles from "./about.module.css"
@@ -11,6 +13,12 @@ import BackButtonHeader from '../src/components/nav/backHeader'
 import WorkCard from "../src/components/cards/workCard";
 
 const SideProjects: React.FC = () => {
+// The photography card below leads to a page that has to fetch before it can
+// show anything, so start that work now rather than on arrival.
+useEffect(() => {
+    prefetchPhotos();
+}, []);
+
 return (
     <>
         <Head>

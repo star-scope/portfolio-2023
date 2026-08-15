@@ -8,17 +8,7 @@ import styles from "./photography.module.css";
 // Components
 import BackButtonHeader from '../src/components/nav/backHeader'
 
-interface Photo {
-  id: string;
-  media_type: string;
-  media_url: string;
-  permalink: string;
-}
-
-interface PhotosResponse {
-  media: Photo[];
-  nextCursor: string | null;
-}
+import { takePrefetchedPhotos, type Photo, type PhotosResponse } from '../src/lib/instagramPrefetch';
 
 const Photography: React.FC = () => {
   const [photos, setPhotos] = useState<Photo[]>([]);
@@ -27,20 +17,38 @@ const Photography: React.FC = () => {
   const sentinelRef = useRef<HTMLDivElement>(null);
   const hasFetchedFirstPage = useRef(false);
 
+  const fetchPage = useCallback(async (after?: string): Promise<PhotosResponse> => {
+    const response = await axios.get<PhotosResponse>('/api/instagram/photos', {
+      params: after ? { after } : {},
+    });
+    return response.data;
+  }, []);
+
   const loadMore = useCallback(async (after?: string) => {
     setLoading(true);
     try {
-      const response = await axios.get<PhotosResponse>('/api/instagram/photos', {
-        params: after ? { after } : {},
-      });
-      setPhotos((prev) => (after ? [...prev, ...response.data.media] : response.data.media));
-      setNextCursor(response.data.nextCursor);
+      // The side projects page may already have this first page in flight or
+      // done. Later pages are always fetched normally.
+      const warm = after ? null : takePrefetchedPhotos();
+      let data: PhotosResponse;
+      if (warm) {
+        try {
+          data = await warm;
+        } catch {
+          data = await fetchPage(after);
+        }
+      } else {
+        data = await fetchPage(after);
+      }
+
+      setPhotos((prev) => (after ? [...prev, ...data.media] : data.media));
+      setNextCursor(data.nextCursor);
     } catch (error) {
       console.error('Error fetching Instagram photos:', error);
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [fetchPage]);
 
   useEffect(() => {
     if (hasFetchedFirstPage.current) return;
