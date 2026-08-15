@@ -47,8 +47,33 @@
     opacity: 1;
 }
 
-@media (max-width: 640px) {
+/* Touch-breakpoint copy stays out of the desktop layout */
+.touchOnly {
+    display: none;
+}
+
+@media (max-width: 1024px) {
     .notFoundContainer {
         width: calc(100% - 60px);
+        max-width: 500px;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    /* No hover on touch, so drop the hide-and-seek game and show the button in flow */
+    .backButton {
+        position: static;
+        opacity: 1;
+        width: 100%;
+        max-width: 300px;
+        margin: 50px auto 0;
+    }
+
+    .desktopOnly {
+        display: none;
+    }
+
+    .touchOnly {
+        display: revert;
     }
 }
