@@ -12,22 +12,28 @@ import BackButtonHeader from '../src/components/nav/backHeader'
 import WorkCard from "../src/components/cards/workCard";
 
 import { WORK_COOKIE_NAME, isValidWorkAccessToken } from '../src/lib/workAuth';
+import { WORK_ITEMS, type WorkItem } from '../src/lib/workItems';
 
 interface WorkProps {
   initialHasAccess: boolean;
+  initialItems: WorkItem[];
 }
 
 export const getServerSideProps: GetServerSideProps<WorkProps> = async (context) => {
   const token = context.req.cookies[WORK_COOKIE_NAME];
+  const hasAccess = isValidWorkAccessToken(token);
   return {
     props: {
-      initialHasAccess: isValidWorkAccessToken(token),
+      initialHasAccess: hasAccess,
+      // Only travels to the browser once the cookie checks out.
+      initialItems: hasAccess ? WORK_ITEMS : [],
     },
   };
 };
 
-const Work: React.FC<WorkProps> = ({ initialHasAccess }) => {
+const Work: React.FC<WorkProps> = ({ initialHasAccess, initialItems }) => {
   const [hasAccess, setHasAccess] = useState(initialHasAccess);
+  const [items, setItems] = useState<WorkItem[]>(initialItems);
   const [submitting, setSubmitting] = useState(false);
 
   const handlePasswordSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -49,6 +55,8 @@ const Work: React.FC<WorkProps> = ({ initialHasAccess }) => {
       });
 
       if (response.ok) {
+        const data = await response.json();
+        setItems(data.items ?? []);
         setHasAccess(true);
       } else {
         toast.dismiss();
@@ -72,24 +80,17 @@ const Work: React.FC<WorkProps> = ({ initialHasAccess }) => {
           <BackButtonHeader title="PROFESSIONAL WORK" />
           <div id="mainContainer">
             <main id="workContainer">
-              <Link id={styles.link} href="https://starscope.notion.site/Tactacam-Reveal-cfbca692e05e43db8029edb2917ea52a" target="_blank" rel="noopener noreferrer">
-                <WorkCard id="section1" title="TACTACAM REVEAL" subtitle="TRAILCAM APP" image="/images/Reveal.png"/>
-              </Link>
-              <Link id={styles.link} href="https://starscope.notion.site/Tactacam-Connect-9f29ea7ccfc149ddae0cf8e0ccae49e8" target="_blank" rel="noopener noreferrer">
-                <WorkCard id="section1" title="TACTACAM CONNECT" subtitle="POV CAMERA APP" image="/images/Connect.png"/>
-              </Link>
-              <Link id={styles.link} href="https://design.ishareit.net" target="_blank" rel="noopener noreferrer">
-                <WorkCard id="section1" title="TACTACAM DESIGN SYSTEM" subtitle="PASSWORD: TACTA0HEIGHT" image="/images/Design System.png"/>
-              </Link>
-              <Link id={styles.link} href="https://starscope.notion.site/Breaker-Nation-4d9efe3eec8f4e35886628b59f69ce5a" target="_blank" rel="noopener noreferrer">
-                <WorkCard id="section1" title="BREAKER NATION" subtitle="MUSIC SHARING SOCIAL MEDIA" image="/images/Breaker.png"/>
-              </Link>
-              <Link id={styles.link} href="https://starscope.notion.site/Xquisite-Marketing-a126d213e1334e50ba606bb35a09b382" target="_blank" rel="noopener noreferrer">
-                <WorkCard id="section1" title="XQUISITE MARKETING" subtitle="GRAPHIC DESIGN & BRANDING" image="/images/XM.png"/>
-              </Link>
-              <a id={styles.link}>
-                <WorkCard id="section1" title="TACTACAM SECURITY" subtitle2="COMING SOON" image="/images/Security.png" subtitle={""}/>
-              </a>
+              {items.map((item) =>
+                item.href ? (
+                  <Link key={item.title} id={styles.link} href={item.href} target="_blank" rel="noopener noreferrer">
+                    <WorkCard id="section1" title={item.title} subtitle={item.subtitle} image={item.image}/>
+                  </Link>
+                ) : (
+                  <a key={item.title} id={styles.link}>
+                    <WorkCard id="section1" title={item.title} subtitle={item.subtitle} subtitle2={item.subtitle2} image={item.image}/>
+                  </a>
+                )
+              )}
             </main>
           </div>
       </>

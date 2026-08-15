@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { createWorkAccessToken, serializeWorkCookie } from '../../../src/lib/workAuth';
+import { WORK_ITEMS } from '../../../src/lib/workItems';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
@@ -19,5 +20,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
   const token = createWorkAccessToken();
   res.setHeader('Set-Cookie', serializeWorkCookie(token));
-  return res.status(200).json({ success: true });
+  // Hand back the page contents here so the client has something to render
+  // without a second round trip, keeping the unlock instant.
+  return res.status(200).json({ success: true, items: WORK_ITEMS });
 }
