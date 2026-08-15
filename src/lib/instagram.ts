@@ -18,7 +18,17 @@ function getRedisToken(): string {
   return token;
 }
 
-const redis = new Redis({ url: getRedisUrl(), token: getRedisToken() });
+// Built on first use, not at import time: constructing this at module scope made a
+// missing env var throw during import, which crashed every /api/instagram/* route
+// with an HTML 500 before its own try/catch could return a useful JSON error.
+let redisClient: Redis | null = null;
+
+function getRedis(): Redis {
+  if (!redisClient) {
+    redisClient = new Redis({ url: getRedisUrl(), token: getRedisToken() });
+  }
+  return redisClient;
+}
 
 export interface InstagramMedia {
   id: string;
@@ -36,11 +46,11 @@ export function getRedirectUri(): string {
 }
 
 export async function getStoredAccessToken(): Promise<string | null> {
-  return redis.get<string>(TOKEN_KEY);
+  return getRedis().get<string>(TOKEN_KEY);
 }
 
 export async function setStoredAccessToken(token: string): Promise<void> {
-  await redis.set(TOKEN_KEY, token);
+  await getRedis().set(TOKEN_KEY, token);
 }
 
 export async function exchangeCodeForShortLivedToken(code: string): Promise<string> {
@@ -135,7 +145,9 @@ export async function fetchInstagramMedia(
 
   const data = await response.json();
   const media = (data.data as InstagramMedia[]).filter((item) => item.media_type === 'IMAGE');
-  const nextCursor: string | null = data.paging?.cursors?.after ?? null;
+  // cursors.after is present even on the final page, so it can't signal "more to come" on
+  // its own. paging.next is what actually disappears at the end of the feed.
+  const nextCursor: string | null = data.paging?.next ? data.paging?.cursors?.after ?? null : null;
 
   return { media, nextCursor };
 }

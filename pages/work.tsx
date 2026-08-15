@@ -35,8 +35,8 @@ const Work: React.FC<WorkProps> = ({ initialHasAccess }) => {
     const enteredPassword = (e.target as any).password.value;
 
     if (enteredPassword.trim() === '') {
-      toast.error('Please enter a password');
       toast.dismiss();
+      toast.error('Please enter a password');
       return;
     }
 
@@ -51,12 +51,12 @@ const Work: React.FC<WorkProps> = ({ initialHasAccess }) => {
       if (response.ok) {
         setHasAccess(true);
       } else {
-        toast.error('Password Incorrect');
         toast.dismiss();
+        toast.error('Password Incorrect');
       }
     } catch {
-      toast.error('Something went wrong, please try again');
       toast.dismiss();
+      toast.error('Something went wrong, please try again');
     } finally {
       setSubmitting(false);
     }

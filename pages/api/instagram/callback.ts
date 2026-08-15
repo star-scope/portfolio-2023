@@ -8,6 +8,11 @@ import {
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { code, error, error_description } = req.query;
 
+  // Next sets no Content-Type for string bodies, which leaves these responses open to
+  // MIME sniffing. error/error_description come straight off the query string, so pin
+  // them to plain text rather than letting a browser decide they might be HTML.
+  res.setHeader('Content-Type', 'text/plain; charset=utf-8');
+
   if (error) {
     return res.status(400).send(`Instagram authorization failed: ${error_description || error}`);
   }
