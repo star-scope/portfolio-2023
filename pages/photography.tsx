@@ -74,7 +74,7 @@ const Photography: React.FC = () => {
       <div className={styles.grid}>
         {photos.map((photo) => (
           <a key={photo.id} href={photo.permalink} target="_blank" rel="noopener noreferrer">
-            <img className={styles.image} src={photo.media_url} alt="" loading="lazy" />
+            <img className={styles.image} src={photo.media_url} alt="Photo on Instagram" loading="lazy" />
           </a>
         ))}
       </div>

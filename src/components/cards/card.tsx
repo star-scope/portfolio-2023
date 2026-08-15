@@ -10,7 +10,7 @@ interface HomeCardProps {
 const HomeCard: React.FC<HomeCardProps> = ({ id, image, title }) => (
   <section id={id}>
     <div className={styles.Card}>
-      <img src={image}/>
+      <img src={image} alt=""/>
     </div>
     <p className="s1">{title}</p>
   </section>

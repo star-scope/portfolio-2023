@@ -98,7 +98,7 @@ const Work: React.FC<WorkProps> = ({ initialHasAccess }) => {
         <Head>
           <title>Caleb Faulkner - Work</title>
         </Head>
-        <img id="logo" src="/images/Logo.png" />
+        <img id="logo" src="/images/Logo.png" alt="Logo" />
         <h1 id="section1">PLEASE ENTER PASSWORD</h1>
         <form className={styles.form} onSubmit={handlePasswordSubmit}>
           <input className={styles.input} id="section2" type="password" name="password"/>

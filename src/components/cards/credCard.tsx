@@ -27,7 +27,7 @@ const CredCard: React.FC<CredCardProps> = (props) => (
         >
           {props.subtitle}
         </p>
-        <img className={styles.credImg} src={props.image}/>
+        <img className={styles.credImg} src={props.image} alt=""/>
         <p className={styles.credBody} dangerouslySetInnerHTML={{ __html: props.body }}></p>
       </div>
     </div>
